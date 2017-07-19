@@ -1,3 +1,6 @@
+// vendors
+@import "vendors/bootstrap/bootstrap.scss";
+
 // absracts
 @import "abstracts/mixins";
 @import "abstracts/placeholder";
@@ -7,5 +10,12 @@
 @import "base/base";
 @import "base/typography";
 
-// vendors
-@import "vendors/bootstrap/bootstrap.scss";
+// layout
+@import "layout/navheader";
+
+// themes
+@import "themes/two-part-page";
+
+// pages
+@import "pages/home";
+@import "pages/sign-up";

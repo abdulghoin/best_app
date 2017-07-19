@@ -1,0 +1,200 @@
+.two-part-page {
+  height: 100vh;
+  width: 100%;
+
+  .top {
+    height: 70%;
+    padding-top: 70px;
+    padding-bottom: 40px;
+    @extend %landing-width;
+    background-color: rgba(40, 99, 249, 0.8);
+    color: $light;
+    animation-name: Background;
+    animation-duration: 2s;
+
+    @keyframes Background{
+      from {background-color: rgba(40, 99, 249, 1);}
+      to {background-color: rgba(40, 99, 249, 0.8);}
+    }
+
+    .left {
+      width: 60%;
+      float: left;
+      height: 100%;
+      @extend %flex;
+      @include prefix(align-items, flex-end);
+
+      h1 {
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .right {
+      width: 40%;
+      height: 100%;
+      float: left;
+      position: relative;
+
+      .box {
+        width: 80%;
+        height: 120%;
+        left: 10%;
+        top: 25%;
+        position: absolute;
+        z-index: 2;
+        padding: 17.5% 6.5% 28.5% 6%;
+        opacity: 1;
+        animation-name: opacity;
+        animation-duration: 3s;
+
+        @keyframes opacity {
+          from {opacity: 0}
+          to {opacity: 1}
+        }
+
+        &.form {
+          color: #000;
+          width: 90%;
+          left: 5%;
+          height: auto;
+          background-color: $light;
+          @include prefix(border-radius, (6px));
+          @include prefix(box-shadow, ( 0 0 10px 0.2px rgba(0, 0, 0, 0.15), 0 0 10px 0.2px rgba(0, 0, 0, 0.15)));
+          padding: 40px 30px;
+
+          h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 25px;
+          }
+
+          .form-group {
+            margin-bottom: 20px;
+
+            .form-control {
+              padding: 12px;
+              font-size: 13px;
+              color: light-grey;
+
+              &.error {
+                border-color: red;
+              }
+            }
+          }
+
+          .error_text {
+            color: red;
+            text-align: center;
+          }
+
+          .form-check {
+            font-size: 12px;
+            margin-bottom: 30px;
+
+            a {
+              font-weight: bold;
+            }
+          }
+
+          .btn-container {
+            display: block;
+            text-align: center;
+
+            button {
+              font-size: 12px;
+              padding: 8px 18px;
+              display: inline-block;
+              border: 1px solid $blue;
+              @include prefix(transition, 0.5s);
+              cursor: pointer;
+              @include prefix(border-radius, 25px);
+              text-transform: uppercase;
+              background-color: $light;
+              color: $blue;
+              margin-right: 15px;
+
+              &:hover {
+                background-color: $blue;
+                color: $light;
+              }
+            }
+          }
+        }
+
+        img {
+          max-height: 100%;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          @include prefix(transform, translateX(-50%));
+        }
+
+        .box-inner {
+          position: absolute;
+          z-index: 1;
+          top: 10.5%;
+          left: 7%;
+          width: 85%;
+          height: 73%;
+
+          img {
+            max-width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    padding-top: 30px;
+    position: relative;
+    height: 30%;
+    @extend %landing-width;
+    background-color: $light;
+
+    .btn-container {
+      width: 60%;
+      float: left;
+
+      .bottom-btn {
+        padding: 10px 20px;
+        display: inline-block;
+        border: 1px solid $blue;
+        @include prefix(transition, 0.5s);
+        cursor: pointer;
+        @include prefix(border-radius, 25px);
+        text-transform: uppercase;
+        background-color: $blue;
+        color: $light;
+        margin-right: 15px;
+
+        i {
+          margin-right: 2px;
+          font-size: 16px;
+        }
+
+        &:hover {
+          background-color: $light;
+          color: $blue;
+        }
+
+        &:last-child {
+          background-color: $light;
+          color: $blue;
+          margin-right: none;
+
+          &:hover {
+            background-color: $blue;
+            color: $light;
+          }
+        }
+      }
+    }
+  }
+}

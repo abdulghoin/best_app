@@ -1,0 +1,59 @@
+#NavHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  .header-container {
+    @extend %landing-width;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    @extend %flex;
+    @include prefix(justify-content, space-between);
+    @include prefix(align-items, center);
+
+    .brand {
+      height: 30px;
+
+      img {
+        max-height: 100%;
+        width: auto;
+      }
+    }
+
+    .nav {
+      text-transform: uppercase;
+
+      li {
+        margin: 0 18px;
+        a {
+          font-size: 13px;
+          color: $light;
+
+          &:hover {
+            color: $light;
+          }
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+          a {
+            border: 1px solid $light;
+            @include prefix(border-radius, 25px);
+            padding: 8px 18px;
+            transition: 0.5s;
+
+            &:hover {
+              background-color: $light;
+              color: $blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
