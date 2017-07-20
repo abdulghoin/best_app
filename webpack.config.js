@@ -1,4 +1,4 @@
-var debug   = true;
+var debug   = false;
 var webpack = require('webpack');
 var path    = require('path');
 
@@ -25,6 +25,6 @@ module.exports = {
   devtool: debug ? 'inline-sourcemap' : 'cheap-module-source-map',
   plugins: debug ? [] : [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false, minimize: true }),
+    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourceMap: true, minimize: true }),
   ],
 };

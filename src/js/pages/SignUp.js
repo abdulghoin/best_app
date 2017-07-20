@@ -22,7 +22,6 @@ class SignUp extends Component {
     let email = this.refs.email.value;
     let phone = this.refs.phone.value;
     let {agree} = this.state;
-    console.log(name, email, phone, agree);
 
     if (name=='') {
       this.setState({name_error:true})
